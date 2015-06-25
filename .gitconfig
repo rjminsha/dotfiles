@@ -125,3 +125,5 @@
 	user = rjminsha
 
 
+[push]
+	default = simple

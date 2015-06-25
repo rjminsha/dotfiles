@@ -13,6 +13,9 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+# my navigation 
+alias osthanes="cd ~/alchemy/osthanes"
+
 # Shortcuts
 alias dl="cd ~/Downloads"
 alias g="git"
