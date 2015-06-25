@@ -152,9 +152,9 @@
 
 	insteadOf = "gist:"
 [user]
-	name = Jessica Frazelle
-	email = princess@docker.com
+	name = Robbie Minshall
+	email = rjminsha@us.ibm.com
 #[remote "origin"]
 	#fetch = +refs/pull/*/head:refs/remotes/origin/pull/*
 [github]
-	user = jfrazelle
+	user = Robbie John

@@ -1,5 +1,3 @@
-# go path
-export GOPATH=$HOME/.go
-
 # update path
-export PATH=/usr/local/bin:/usr/local/go/bin:$PATH:$GOPATH/bin:/sbin
+export ANT_HOME=~/Applications/apache-ant-1.9.4
+export PATH=/usr/local/bin:$PATH:$ANT_HOME/bin

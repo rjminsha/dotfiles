@@ -1,6 +1,6 @@
 .PHONY: all bin default dotfiles etc init install
 
-all: bin dotfiles etc init
+all: dotfiles
 
 default: install
 
