@@ -118,4 +118,10 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
+[user]
+	name = Robbie Minshall
+	email = rjminsha@us.ibm.com
+[github]
+	user = rjminsha
+
 
