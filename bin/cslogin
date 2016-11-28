@@ -1,0 +1,37 @@
+#!/bin/bash
+if [ -z "$IBM_PWD" ]; then 
+    echo "Please set IBM_PWD to your IBM ID password"
+    exit 1
+fi 
+
+if [ -z "$IBM_ID" ]; then 
+    echo "Please set IBM_ID to your IBM ID"
+    exit 1
+fi 
+
+PSSWD=$IBM_PWD
+USER="rjminsha"
+ORG=$IBM_ID
+
+if [ -z $1 ]; then
+        target="prod"
+else
+        target=$1
+fi
+
+if [ -z $2 ]; then
+    space="dev" 
+else
+        space=$2
+fi
+
+echo "$target/$ORG/$space"
+if [ $target"@@" == "prod@@" ]; then
+    ice login -u $USER -p $PSSWD -o $ORG -s $space -H containers-api.ng.bluemix.net -R registry.ng.bluemix.net -a api.ng.bluemix.net
+elif [ $target"@@" == "beta@@" ]; then
+    ice login -u $USER -p $PSSWD -o $ORG -s $space -H api-ice.ng.bluemix.net -R registry-ice.ng.bluemix.net -a api.ng.bluemix.net
+elif [ $target"@@" == "beta-stage@@" ]; then
+    ice login -u $USER -p $PSSWD -o $ORG -s $space -H api-ice.stage1.ng.bluemix.net -R registry-ice.stage1.ng.bluemix.net -a api.stage1.ng.bluemix.net
+elif [ $target"@@" == "stage" ]; then
+    ice login -u $USER -p $PSSWD -o $ORG -s $space -H containers-api.stage1.ng.bluemix.net -R registry.stage1.ng.bluemix.net -a api.stage1.ng.bluemix.net
+fi
