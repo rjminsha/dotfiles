@@ -73,11 +73,6 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-# Add an "alert" alias for long running commands.  Use like so:
-#	sleep 10; alert
-#alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias alert='terminal-notifier -message "$(history | tail -n1 )" -title "Complete" -sound Frog'
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -95,3 +90,12 @@ done
 if [[ -f $HOME/.bash_profile ]]; then
 	source $HOME/.bash_profile
 fi
+
+export NVM_DIR="/Users/robbie/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# added by travis gem
+[ -f /Users/robbie/.travis/travis.sh ] && source /Users/robbie/.travis/travis.sh
+
+### Added by the Bluemix CLI
+source /usr/local/Bluemix/bx/bash_autocomplete
